@@ -7,18 +7,18 @@ on:
     tags:
       - 'v*'
     paths:
-      - 'dir-structure/cuda-exercise/pixi.toml'
-      - 'dir-structure/cuda-exercise/pixi.lock'
-      - 'dir-structure/cuda-exercise/Dockerfile'
-      - 'dir-structure/cuda-exercise/.dockerignore'
-      - 'dir-structure/cuda-exercise/app/**'
+      - 'cuda-exercise/pixi.toml'
+      - 'cuda-exercise/pixi.lock'
+      - 'cuda-exercise/Dockerfile'
+      - 'cuda-exercise/.dockerignore'
+      - 'cuda-exercise/app/**'
   pull_request:
     paths:
-      - 'dir-structure/cuda-exercise/pixi.toml'
-      - 'dir-structure/cuda-exercise/pixi.lock'
-      - 'dir-structure/cuda-exercise/Dockerfile'
-      - 'dir-structure/cuda-exercise/.dockerignore'
-      - 'dir-structure/cuda-exercise/app/**'
+      - 'cuda-exercise/pixi.toml'
+      - 'cuda-exercise/pixi.lock'
+      - 'cuda-exercise/Dockerfile'
+      - 'cuda-exercise/.dockerignore'
+      - 'cuda-exercise/app/**'
   release:
     types: [published]
   workflow_dispatch:
@@ -75,7 +75,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: cuda-exercise
-          file: dir-structure/cuda-exercise/Dockerfile
+          file: cuda-exercise/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           pull: true
@@ -85,7 +85,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: cuda-exercise
-          file: dir-structure/cuda-exercise/Dockerfile
+          file: cuda-exercise/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           pull: true
